@@ -3,7 +3,6 @@ module tt_um_islam_ihfaz_mealy (
 input wire [7:0] ui_in, // Dedicated inputs
 output wire [7:0] uo_out, // Dedicated outputs
 input wire [7:0] uio_in, // IOs: Input path
-105
 output wire [7:0] uio_out, // IOs: Output path
 output wire [7:0] uio_oe, // IOs: Enable path (active high:
 0=input, 1=output)
@@ -31,7 +30,6 @@ end
 assign z1=(y[3] & ~x1 & clk)|(y[2] & y[1] & x1 & clk);
 always @(y or x1)
 begin
-106
 case(y)
 state_a: begin
 if(x1==0)
@@ -62,7 +60,6 @@ endcase
 end
 // All output pins must be assigned. If not used, assign to 0.
 assign uo_out[0] = y[1];
-107
 assign uo_out[1] = y[2];
 assign uo_out[2] = y[3];
 assign uo_out[3] = z1;
